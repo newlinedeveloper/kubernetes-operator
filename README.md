@@ -1,6 +1,3 @@
-# kubernetes-operator
-Kubernetes Operator Basics and Advance
-
 # How to Write Your First Kubernetes Operator
 
 Kubernetes is a powerful container orchestration platform known for its flexibility and extensibility. One of the key features that make Kubernetes so versatile is its ability to be extended through Custom Resource Definitions (CRDs) and Operators. Operators are applications that are built on top of Kubernetes to automate complex, application-specific tasks. In this guide, we will walk you through the process of writing your first Kubernetes Operator.
