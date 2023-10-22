@@ -39,7 +39,7 @@ This command initializes a new Operator project with a domain and repository inf
 
 ## Step 2: Create a New Custom Resource Definition (CRD)
 
-Next, let's create a Custom Resource Definition (CRD) that defines the custom resource your Operator will manage. For this example, let's create a simple "MyApp" CRD:
+Next, let's create a Custom Resource Definition (CRD) that defines the custom resource your Operator will manage. For this example, let's create a simple "Cloudnloud" CRD:
 
 ```bash
 operator-sdk create api --group=api --version=v1alpha1 --kind=Cloudnloud --resource=true --controller=true
@@ -49,9 +49,8 @@ This command generates the necessary code for your `MyApp` CRD, including the AP
 
 ## Step 3: Define the Operator Logic
 
-Edit the file `controllers/myapp_controller.go` to define the logic for your Operator. Here's a simplified example of an Operator that watches for changes to `MyApp` resources and logs a message when they are created:
 
-update sample CRD spec file
+update sample CRD spec file `config/samples/api_v1alpha1_cloudnloud.yaml`
 
 ```
 spec:
@@ -59,12 +58,12 @@ spec:
   end: 20 
   replicas: 5
   deployments:
-    - name: nginx
+    - name: cnl
       namespace: default
 
 ```
 
-Define CRD Spec in go types file
+Define CRD Spec in go types file `api/v1alpha1/cloudnloud_types.go`
 
 ```
 // CloudnloudSpec defines the desired state of Cloudnloud
@@ -81,6 +80,7 @@ type NamespacedName struct {
 }
 ```
 
+Create your own controller login `controllers/cloudnloud_controller.go`
 
 ```
 package controllers
