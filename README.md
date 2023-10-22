@@ -205,19 +205,25 @@ kubectl apply -f config/crd/bases/api.cloudnloud.com_cloudnlouds.yaml
 
 kubectl get crd
 ```
+## Step 6: Run your custom controller
 
-## Step 6: Deploy our application 
+```
+make run
+```
+
+
+## Step 7: Deploy our application 
 ```
 kubectl create deploy cnl --image=veerasolaiyappan/my-node-app:v2
 ```
 
 
-## Step 7: Deploy our custom resource 
+## Step 8: Deploy our custom resource 
 ```
 kubectl apply -f config/samples/api_v1alpha1_cloudnloud.yaml
 ```
 
-## Step 8: Delete all the resources
+## Step 9: Delete all the resources
 ```
 kubectl delete deploy cnl
 
