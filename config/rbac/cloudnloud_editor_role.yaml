@@ -1,0 +1,31 @@
+# permissions for end users to edit cloudnlouds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: cloudnloud-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: cnl-operator
+    app.kubernetes.io/part-of: cnl-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: cloudnloud-editor-role
+rules:
+- apiGroups:
+  - api.cloudnloud.com
+  resources:
+  - cloudnlouds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - api.cloudnloud.com
+  resources:
+  - cloudnlouds/status
+  verbs:
+  - get

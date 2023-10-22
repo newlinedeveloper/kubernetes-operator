@@ -1,0 +1,18 @@
+apiVersion: api.cloudnloud.com/v1alpha1
+kind: Cloudnloud
+metadata:
+  labels:
+    app.kubernetes.io/name: cloudnloud
+    app.kubernetes.io/instance: cloudnloud-sample
+    app.kubernetes.io/part-of: cnl-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: cnl-operator
+  name: cloudnloud-sample
+spec:
+  start: 5 
+  end: 20
+  replicas: 5
+  deployments:
+    - name: cnl
+      namespace: default
+  
